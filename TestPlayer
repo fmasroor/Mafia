@@ -1,0 +1,67 @@
+
+public class TestPlayer extends Player{
+
+	@Override
+	public int nightMafia(int i, int mafiaChoice) {
+		int j;
+		for (j = 1; j <= 7; j++) {
+			if (isPlayerAlive(j) && (j != hat && j != otherMafia.hat))
+				break;
+		}
+		return j;
+	}
+
+	@Override
+	public int nightCop() {
+		// TODO Auto-generated method stub
+		return 1;
+	}
+
+	@Override
+	public int nightDoctor() {
+		return 2;
+	}
+
+	@Override
+	public int dayMafia() {
+		claim(role);
+		int j;
+		for (j = 7; j >= 1; j--) {
+			if (isPlayerAlive(j))
+				break;
+		}
+		return j;
+	}
+
+	@Override
+	public int dayCop() {
+		int j;
+		for (j = 7; j >= 1; j--) {
+			if (isPlayerAlive(j))
+				break;
+		}
+		return j;
+	}
+
+	@Override
+	public int dayDoctor() {
+		int j;
+		for (j = 7; j >= 1; j--) {
+			if (isPlayerAlive(j))
+				break;
+		}
+		return j;
+	}
+
+	@Override
+	public int dayTown() {
+		int j;
+		for (j = 7; j >= 1; j--) {
+			if (isPlayerAlive(j))
+				break;
+		}
+		return j;
+	}
+	
+
+}
