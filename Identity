@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+
+public class Identity {
+	int hat;
+	boolean life;
+	int lynch;
+	int role;
+	String Role;
+	ArrayList<String> suspicions, visits;
+
+	// life = 0 means dead; life = 1 means alive
+	public Identity() {
+		suspicions = new ArrayList<String>();
+		visits = new ArrayList<String>();
+		role = 0;
+		life = true;
+	}
+
+	@Override
+	public String toString() {
+		String s = "";
+		s += "Identity of Player " + hat + ": (";
+		if (!life) s += "DEAD)\n";
+		else s += "ALIVE)\n";
+		s += "    Claims to be " + role + " (" + Role + ")\n";
+		s += "    Suspects: ";
+		for (String t : suspicions)
+		{
+			s += t.charAt(0) + " as " + t.charAt(1) +" (" + Player.roleToString(t.charAt(1)) + "),";
+		}
+		s = s.substring(0,s.length()-1);
+		return s;
+	}
+
+}
