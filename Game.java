@@ -154,7 +154,7 @@ public class Game {
 		}
 		return mode;
 	}
-
+ 
 	public static int modeFrequency(ArrayList<Integer> votes) {
 		int count = 0, maxCount = 0;
 
